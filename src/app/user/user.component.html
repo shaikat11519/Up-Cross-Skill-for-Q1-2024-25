@@ -1,0 +1,23 @@
+<app-card>
+  <!-- <button (click)="onSelectUser()">
+    <img [src]="imagePath()" [alt]="selectedUser().name"/>
+    <span>{{ selectedUser().name }}</span>
+  </button> -->
+
+<!-- Input decoder -->
+  <!-- <button (click)="onSelectUser()">
+    <img [src]="imagePath" [alt]="name"/>
+    <span>{{ name }}</span>
+  </button> -->
+
+  <!-- input function and using signal -->
+  <!-- <button (click)="onSelectUser()">
+    <img [src]="imagePath()" [alt]="name()"/>
+    <span>{{ name() }}</span>
+  </button> -->
+
+   <button [class.active]="selected" (click)="onSelectUser()">
+    <img [src]="imagePath" [alt]="user.name"/>
+    <span>{{ user.name }}</span>
+  </button>
+</app-card>

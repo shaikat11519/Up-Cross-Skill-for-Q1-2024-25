@@ -1,0 +1,47 @@
+<app-header />
+
+<main>
+  <ul id="users">
+    @for(user of users; track user.id){
+      <li>
+        <app-user
+          [user]="user"
+          [selected]="user.id ===selectedId"
+          (select)="onSelectUser($event)"
+        />
+      </li>
+    }
+
+  </ul>
+
+ @if(selectedUser){
+  <app-tasks [name]="selectedUser.name" [userId]="selectedUser.id"/>
+ } @else {
+  <p id="fallback">Select a user to see their tasks</p>
+ }
+
+
+
+<!-- Using NgFor and NgIf using for Legacy project -->
+
+ <!-- <ul id="users"> -->
+  <!-- Legacy Angular loop using -->
+   <!-- need to import NgFor -->
+  <!-- <li *ngFor="let user of users">
+    <app-user
+      [user]="user"
+      (select)="onSelectUser($event)"
+    />
+  </li> -->
+
+<!-- </ul> -->
+
+ <!-- Legacy Angular if else using -->
+  <!-- need to import NgIf -->
+ <!-- <app-tasks *ngIf="selectedUser; else fallback" [name]="selectedUser!.name"/>
+  <ng-template #fallback>
+    <p id="fallback">Select a user to see their tasks</p>
+  </ng-template> -->
+<!-- Using NgFor and NgIf using for Legacy project -->
+
+</main>
